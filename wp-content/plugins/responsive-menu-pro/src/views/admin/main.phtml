@@ -1,0 +1,79 @@
+<?php
+
+use ResponsiveMenuPro\Formatters\Tabs;
+use ResponsiveMenuPro\Formatters\Text;
+
+// This is horrible!
+include dirname(dirname(dirname(__FILE__))) . '/config/admin_ordering.php';
+
+$current_page = get_option('responsive_menu_pro_current_page', 'license');
+$tabs = new ResponsiveMenuPro\ViewModels\Components\Admin\Tabs($order_mapping, $current_page);
+$boxes = new ResponsiveMenuPro\ViewModels\Components\Admin\Boxes($order_mapping, $l['options'], $current_page);
+
+?>
+<div class="wrap">
+  <div id="poststuff">
+      <div id="postbox-container" class="postbox-container responsive-menu-pro-postbox-container">
+        <?php if(isset($l['flash']['success'])): ?>
+          <div class="updated notice notice-success is-dismissible" id="message">
+            <p><?php _e($l['flash']['success'], 'responsive-menu-pro'); ?></p>
+            <button class="notice-dismiss" type="button">
+              <span class="screen-reader-text">
+              <?php _e('Dismiss this notice', 'responsive-menu-pro') ?>.
+              </span>
+            </button>
+          </div> <!-- updated -->
+        <?php endif; ?>
+      <?php if(isset($l['flash']['errors'])): ?>
+        <div class="notice notice-error is-dismissible" id="message">
+          <ul>
+              <?php foreach($l['flash']['errors'] as $error): ?>
+                <li><?php _e($error, 'responsive-menu-pro'); ?></li>
+              <?php endforeach; ?>
+          </ul>
+          <button class="notice-dismiss" type="button">
+            <span class="screen-reader-text">
+            <?php _e('Dismiss this notice', 'responsive-menu-pro') ?>.
+            </span>
+          </button>
+        </div>
+      <?php endif; ?>
+
+      <div class="tabs_container">
+        <?php echo $tabs->render(); ?>
+      </div>
+
+      <div id="all_options_container">
+        <div class="meta-box-sortables ui-sortable" id="normal-sortables">
+        	<form action="" method="post" enctype="multipart/form-data" id="responsive_menu_pro_form">
+            <input type="submit" class="button submit" name="responsive_menu_pro_submit" value="Update Options" style="display: none;" />
+            <input type="hidden" id="responsive_menu_pro_current_page" name="menu[responsive_menu_pro_current_page]" value="<?php echo $current_page; ?>" />
+            <div id="options_list_container">
+              <?php echo $boxes->render(); ?>
+            </div>
+        		<input type="submit" id="responsive_menu_pro_submit" class="button submit" name="responsive_menu_pro_submit" value="<?php _e('Update Options', 'responsive-menu-pro') ?>" />
+        	</form>
+        </div> <!-- #normal-sortables -->
+      </div><!--#all_options_container
+   --><div id="banner_area">
+
+        <div class="postbox " id="submitdiv">
+          <h2 class="hndle ui-sortable-handle"><span>Preview</span></h2>
+          <div class="inside">
+            <div id="submitpost" class="submitbox">
+              <div id="minor-publishing-actions">
+                  <input type="submit" class="button preview" id="responsive_menu_pro_preview" name="responsive_menu_pro_preview" value="<?php _e('Preview Changes', 'responsive-menu-pro'); ?>" />
+                  <br /><br />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="docs_banner">
+          <?php _e('Confused? Check out our documentation', 'responsive-menu-pro'); ?>
+          <a target="_blank" href="https://responsive.menu/docs" class="button"><?php _e('View Docs', 'responsive-menu-pro'); ?></a>
+        </div>
+      </div> <!-- #banner_area -->
+    </div> <!-- #postbox-container -->
+  </div> <!-- #poststuff -->
+</div> <!-- #wrap -->

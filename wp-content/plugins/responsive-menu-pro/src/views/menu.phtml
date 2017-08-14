@@ -1,0 +1,15 @@
+<div id="responsive-menu-pro-container"
+  class="
+  <?php echo $l['options']['animation_type']; ?>-<?php echo $l['options']['menu_appear_from']; ?>
+  <?php echo $l['options']['use_single_menu'] == 'on' ? 'responsive-menu-pro-no-transition' : '' ?>
+  ">
+  <div id="responsive-menu-pro-wrapper">
+    <?php echo $l['menu']; ?>
+  </div>
+</div>
+<?php if($l['options']['menu_overlay'] == 'on') : ?>
+  <div id="responsive-menu-pro-mask"></div>
+<?php endif; ?>
+<?php if($l['options']['menu_disable_scrolling'] == 'on') : ?>
+  <div id="responsive-menu-pro-overlay"></div>
+<?php endif; ?>

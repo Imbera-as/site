@@ -1,4 +1,4 @@
-wp-content/*
+wp-content/uploads/*
 .DS_Store
 wp-config-sample.php
 wp-config.php.baK
