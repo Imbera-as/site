@@ -30,7 +30,7 @@ $access_secret=getenv('AWS_ACCESS_SECRET_KEY');
 
 define('DB_NAME', 'imbera2017');
 
-m/** MySQL database username */
+/** MySQL database username */
 define('DB_USER', $user);
 
 /** MySQL database password */
