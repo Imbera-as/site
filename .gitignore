@@ -2,3 +2,4 @@ wp-content/*
 .DS_Store
 wp-config-sample.php
 wp-config.php.baK
+Thumbs.db
