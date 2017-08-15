@@ -21,6 +21,7 @@
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
 $host=getenv('MYSQL_SERVICE_HOST');
+$dbname=getenv('MYSQL_DATABASE');
 $user=getenv('MYSQL_USER');
 $password=getenv('MYSQL_PASSWORD');
 $access_key_id=getenv('AWS_ACCESS_KEY_ID');
@@ -31,7 +32,7 @@ $hostname=getenv('HOSTNAME');
 define('WP_HOME',$hostname);
 define('WP_SITEURL',$siteurl);
 	
-define('DB_NAME', 'imbera2017');
+define('DB_NAME', $dbname);
 
 /** MySQL database username */
 define('DB_USER', $user);
