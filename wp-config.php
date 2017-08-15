@@ -25,8 +25,8 @@ $user=getenv('MYSQL_USER');
 $password=getenv('MYSQL_PASSWORD');
 $access_key_id=getenv('AWS_ACCESS_KEY_ID');
 $access_secret=getenv('AWS_ACCESS_SECRET_KEY');
-$siteurl=getenv('HOSTNAME')
-$hostname=getenv('HOSTNAME')
+$siteurl=getenv('HOSTNAME');
+$hostname=getenv('HOSTNAME');
 
 define('WP_HOME',$hostname);
 define('WP_SITEURL',$siteurl);
