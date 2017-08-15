@@ -29,8 +29,8 @@ $access_secret=getenv('AWS_ACCESS_SECRET_KEY');
 $siteurl=getenv('HOSTNAME');
 $hostname=getenv('HOSTNAME');
 
-define('WP_HOME',$hostname);
-define('WP_SITEURL',$siteurl);
+define('WP_HOME','http://'.$hostname);
+define('WP_SITEURL','http://'.$siteurl);
 	
 define('DB_NAME', $dbname);
 
