@@ -54,8 +54,8 @@ define('DB_COLLATE', '');
 define( 'DBI_AWS_ACCESS_KEY_ID', $access_key_id );
 define( 'DBI_AWS_SECRET_ACCESS_KEY', $access_secret );
 
-	
-
+/** for allowing updates and upgrades via web admin **/
+define('FS_METHOD', 'direct');
 
 /**#@+
  * Authentication Unique Keys and Salts.
