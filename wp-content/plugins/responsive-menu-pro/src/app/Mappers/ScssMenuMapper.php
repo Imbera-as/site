@@ -61,6 +61,7 @@ class ScssMenuMapper extends ScssMapper {
         }
         transition: transform {$options['animation_speed']}s;
         text-align: {$options['menu_text_alignment']};
+        opacity: 0.85;
 
         & #responsive-menu-pro-wrapper {
           background: {$options['menu_background_colour']};
